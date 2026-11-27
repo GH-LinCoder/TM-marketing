@@ -1,1 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organise — Create, Build, and Run Any Organization</title>
+  <meta name="description" content="Sign-up to organize a new club, community, or pressure group. Or convert your existing audience to activists. Auto-onboarding, recruitment, surveys, tasks, messages, fees.">
+  <meta name="google-site-verification" content="oXfy4QV-50tDT6rcGL8gqhB675VTRFwxUG2H2mS4cSA">
+  <link rel="canonical" href="https://myorg.netlify.app/">
 
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Organise">
+  <meta property="og:description" content="Build an organisation from scratch or turn an audience into activists.">
+  <meta property="og:image" content="https://myorg.netlify.app/images/myOrg-palace002.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Platform overview for creating, building, and managing independent organizations">
+  <meta property="og:url" content="https://myorg.netlify.app/">
+  <meta property="og:type" content="website">
+
+  <!-- Structured Data for Search Engines & LLMs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://myorg.netlify.app/#website",
+        "url": "https://myorg.netlify.app/",
+        "description": "A platform for creating and managing independent organisations.",
+        "about": {
+          "@id": "https://myorg.netlify.app/#software"
+        }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://myorg.netlify.app/#software",
+        "operatingSystem": "Web",
+        "browserRequirements": "Requires HTML5 support",
+        "applicationCategory": [
+          "Organization Management",
+          "Community & Civic Organizing",
+          "Group Collaboration"
+        ],
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Clubs, Community Movements, Pressure Groups, Nonprofits, and Early-Stage Ventures"
+        },
+        "description": "A platform to build and manage organizations. It provides membership management, organisational structures, task management, surveys, automated onboarding, recruitment tools, display of organisational information, internal messaging, automated workflows, payment processing and activity-based access permissions. It has integrated, context-sensitive help.",
+        "featureList": [
+          "Memberships",
+          "Organisational structure management",
+          "Task assignment and tracking",
+          "Surveys and feedback",
+          "Automated funnels connecting tasks and surveys",
+          "Referral links for recruitment & marketing tracking",
+          "Display of aims, plans, decisions and policies",
+          "Payment processing",
+          "Activity-based access permissions",
+          "Integrated context-sensitive help"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #525860;
+      --bg: #ffffff;
+      --surface: #f6f8fa;
+      --border: #d0d7de;
+      --accent: #0969da;
+      --notice-bg: #fff8c5;
+      --notice-border: #d4a72c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+    header, section, footer { margin-bottom: 3rem; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+    }
+    nav a:hover { color: var(--accent); text-decoration: underline; }
+    .status-banner {
+      background: var(--notice-bg);
+      border: 1px solid var(--notice-border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    h1 {
+      font-size: 2.25rem;
+      line-height: 1.2;
+      margin: 0 0 1rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin: 0 0 1rem;
+    }
+    h3 {
+      font-size: 1.15rem;
+      margin: 0 0 0.4rem;
+    }
+    p { margin: 0 0 1rem; }
+    .lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--accent);
+    }
+    .btn-primary { background: var(--accent); color: #ffffff; }
+    .btn-secondary { background: var(--bg); color: var(--accent); }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .card ul {
+      padding-left: 1.2rem;
+      margin: 0.75rem 0 0;
+    }
+    .card li { margin-bottom: 0.35rem; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+    }
+    footer li { margin-bottom: 0.4rem; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Primary Navigation">
+      <a href="index.html">Home</a>
+      <a href="createAnOrganization.html">Create</a>
+      <a href="buildAnOrganization.html">Build</a>
+      <a href="runAnOrganization.html">Run</a>
+      <a href="whoShouldUseIt.html">Who Should Use It</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <div class="status-banner" role="note">
+      <strong>System Status:</strong> The system is currently under test. Early adopters, organizers, and testers are welcome to explore the platform and apply for an independent instance.
+    </div>
+
+    <h1>Create, Build, and Manage Any Kind of Organization</h1>
+    <p class="lead">
+      This database-driven system provides the essential tools to build and manage a new organization of any kind—such as a club, pressure group, or community movement. If you already have a following, you can also use it to turn that audience into active participants.
+    </p>
+    <div class="cta-group">
+      <a href="createAnOrganization.html" class="btn btn-primary">Create an Organization</a>
+      <a href="about.html" class="btn btn-secondary">Apply for Your Own Independent Website</a>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="who-heading">
+      <h2 id="who-heading">Start From Scratch or Mobilize an Existing Audience</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Launch a New Club or Movement</h3>
+          <p>
+            Start with a clean operational foundation without stitching together spreadsheets, chat apps, and billing tools. Establish your aims, invite founding members, and assign initial tasks from day one.
+          </p>
+          <p><a href="betterthanSpreadsheet.html">See why a structured system beats spreadsheets &rarr;</a></p>
+        </article>
+        <article class="card">
+          <h3>Turn Your Audience into Activists</h3>
+          <p>
+            Move passive followers off social feeds and into an organized structure. Use automated onboarding funnels, referral links, and clear task assignments to turn supporters into active contributors.
+          </p>
+          <p><a href="turnAudienceToActivists.html">Learn how to mobilize your audience &rarr;</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="stages-heading">
+      <h2 id="stages-heading">How It Works: Create, Build, and Run</h2>
+      <p>
+        Rather than forcing your group into rigid industry templates, the software supplies the core operational tools required across every stage of an organization's lifecycle.
+      </p>
+      <div class="grid-3">
+        <article class="card">
+          <h3>1. Create</h3>
+          <p>Set up your independent system instance, connect required accounts, and define your founding structure.</p>
+          <ul>
+            <li><a href="createAnOrganization.html">How to Create an Organization</a></li>
+            <li><a href="whoShouldUseIt.html">Who Should Use It</a></li>
+            <li><a href="about.html">Apply for an Independent System</a></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>2. Build</h3>
+          <p>Coordinate people and growth using tasks, surveys, organizational relationships, referrals, and payments.</p>
+          <ul>
+            <li><a href="buildAnOrganization.html">Tasks, Surveys &amp; Structure</a></li>
+            <li><a href="recruitment-and-onboarding.html">Recruitment &amp; Auto-Onboarding</a></li>
+            <li><a href="incomeFeesPayment.html">Income, Fees &amp; Payments</a></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>3. Run</h3>
+          <p>Govern daily operations with activity-based permissions, internal messaging, and transparent policy publishing.</p>
+          <ul>
+            <li><a href="runAnOrganization.html">Permissions &amp; Management</a></li>
+            <li><a href="organizationOperatingSystem.html">Organization Operating System</a></li>
+            <li><a href="pricing.html">Pricing &amp; Tiers</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="tools-heading">
+      <h2 id="tools-heading">Core Tools Included in the System</h2>
+      <p>
+        Every independent instance comes equipped with a unified set of foundational tools designed to handle the core operational needs of any group:
+      </p>
+      <div class="grid-2">
+        <div>
+          <h3>Membership Stored in a Database</h3>
+          <p>Keep all member records, roles, and statuses in a structured, searchable database instead of scattered files.</p>
+        </div>
+        <div>
+          <h3>Assign and Track Tasks</h3>
+          <p>Delegate concrete actions to members or groups and track progress through to completion.</p>
+        </div>
+        <div>
+          <h3>Get Feedback from Surveys</h3>
+          <p>Run surveys to gather member input, measure consensus, and connect responses into automated workflows.</p>
+        </div>
+        <div>
+          <h3>Build and View Organization Structure</h3>
+          <p>Map out committees, working groups, and reporting relationships so everyone sees how the organization fits together.</p>
+        </div>
+        <div>
+          <h3>Create Referral Links for Recruitment</h3>
+          <p>Equip members with trackable referral links to recruit new participants and measure outreach.</p>
+        </div>
+        <div>
+          <h3>Automated Onboarding Funnels</h3>
+          <p>Guide new visitors automatically based on their intent—whether joining as a member, organizer, developer, or tester.</p>
+        </div>
+        <div>
+          <h3>Internal Messaging</h3>
+          <p>Communicate directly within your organization's platform without relying on disconnected third-party chat tools.</p>
+        </div>
+        <div>
+          <h3>Publish Aims, Plans, Decisions &amp; Policies</h3>
+          <p>Maintain an authoritative record of your mission, strategic plans, governance decisions, and rules.</p>
+        </div>
+        <div>
+          <h3>Accept Payments via a Merchant of Account</h3>
+          <p>Collect membership dues, fees, or contributions through an integrated Merchant of Account setup.</p>
+        </div>
+        <div>
+          <h3>Activity-Based Permission System</h3>
+          <p>Control every tool, record, and action through a granular permission system tailored to each member's role.</p>
+        </div>
+        <div>
+          <h3>Context-Based Help</h3>
+          <p>Integrated, context-sensitive help explains each feature right where it is used so new members need minimal training.</p>
+        </div>
+        <div>
+          <h3>Independent System Websites</h3>
+          <p>Run your organization on its own dedicated, white-label system instance free from platform marketing clutter.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="apply-heading">
+      <h2 id="apply-heading">Apply for Your Own Independent System Website</h2>
+      <p>
+        Customer organizations run on independent instances of the exact same software—giving your group full control over its membership, data, and identity without outside pricing or marketing pages intruding on your members.
+      </p>
+      <p>
+        The system is currently under test. Visit <a href="about.html">About &amp; Applications</a> to apply for your own independent website or join as a tester.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="grid-3">
+      <div>
+        <strong>Create</strong>
+        <ul>
+          <li><a href="createAnOrganization.html">Create an Organization</a></li>
+          <li><a href="whoShouldUseIt.html">Who Should Use It</a></li>
+          <li><a href="about.html">About &amp; Independent Systems</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Build</strong>
+        <ul>
+          <li><a href="buildAnOrganization.html">Build an Organization</a></li>
+          <li><a href="turnAudienceToActivists.html">Turn Audience to Activists</a></li>
+          <li><a href="recruitment-and-onboarding.html">Recruitment &amp; Onboarding</a></li>
+          <li><a href="incomeFeesPayment.html">Income, Fees &amp; Payments</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Run &amp; Overview</strong>
+        <ul>
+          <li><a href="runAnOrganization.html">Run an Organization</a></li>
+          <li><a href="organizationOperatingSystem.html">Organization Operating System</a></li>
+          <li><a href="betterthanSpreadsheet.html">Better Than Spreadsheets</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="llms.txt">llms.txt</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
