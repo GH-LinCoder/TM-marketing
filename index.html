@@ -1,0 +1,484 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Build an Organisation | Turn an Audience into Action</title>
+
+  <meta name="description"
+        content="Build a club, community, campaign or movement. Turn an existing audience into an organisation, or organise a growing group with membership, tasks, surveys and automated workflows.">
+
+  <meta name="google-site-verification"
+        content="oXfy4QV-50tDT6rcGL8gqhB675VTRFwxUG2H2mS4cSA">
+
+  <link rel="canonical" href="https://YOUR-MARKETING-DOMAIN/">
+
+  <!-- Open Graph -->
+  <meta property="og:title"
+        content="Build an Organisation | Organise">
+
+  <meta property="og:description"
+        content="Turn an audience into an organisation, or build a new club, community or movement from scratch.">
+
+  <meta property="og:image"
+        content="https://YOUR-MARKETING-DOMAIN/images/myOrg-palace002.jpg">
+
+  <meta property="og:image:alt"
+        content="Build and manage an independent organisation">
+
+  <meta property="og:url"
+        content="https://YOUR-MARKETING-DOMAIN/">
+
+  <meta property="og:type" content="website">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://YOUR-MARKETING-DOMAIN/#website",
+        "url": "https://YOUR-MARKETING-DOMAIN/",
+        "name": "Organise",
+        "description": "A platform for creating and managing independent organisations.",
+        "about": {
+          "@id": "https://YOUR-MARKETING-DOMAIN/#software"
+        }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://YOUR-MARKETING-DOMAIN/#software",
+        "name": "Organise",
+        "operatingSystem": "Web",
+        "applicationCategory": "BusinessApplication",
+        "description": "A web-based system for building and managing new and growing organisations. It provides membership management, organisational structures, task assignment and tracking, surveys, recruitment, automated onboarding, internal messaging, organisational information, payment processing and activity-based permissions. It includes integrated context-sensitive help.",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "People starting or developing clubs, community groups, campaigns, movements and other small organisations, including people turning an existing audience into an organised group."
+        },
+        "featureList": [
+          "Database-based membership management",
+          "Organisational structure management",
+          "Task assignment and tracking",
+          "Surveys and member feedback",
+          "Automated workflows connecting tasks and surveys",
+          "Automated onboarding",
+          "Referral links and recruitment tracking",
+          "Publication of aims, plans, decisions and policies",
+          "Internal messaging",
+          "Payment processing",
+          "Activity-based access permissions",
+          "Integrated context-sensitive help"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #525860;
+      --bg: #ffffff;
+      --surface: #f6f8fa;
+      --border: #d0d7de;
+      --accent: #0969da;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      line-height: 1.25;
+      margin: 0 0 1rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.35rem;
+      margin: 2.5rem 0 1rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin: 0 0 0.5rem;
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
+
+    ul {
+      margin: 0.5rem 0 1.25rem;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.55rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+    }
+
+    .cta {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <nav aria-label="Primary Navigation">
+    <a href="index.html">Home</a>
+    <a href="createAnOrganization.html">Create</a>
+    <a href="buildAnOrganization.html">Build</a>
+    <a href="runAnOrganization.html">Run</a>
+    <a href="turnAudienceToActivists.html">Recruit</a>
+    <a href="whoShouldUseIt.html">Who It's For</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <h1>Turn an Audience into an Organisation. Or Build One from Scratch.</h1>
+
+  <p class="intro">
+    Whether you already have a following that you want to organise,
+    or you are starting a new club, community or movement, this system
+    provides the tools to build and manage an organisation that can
+    get things done.
+  </p>
+
+  <p>
+    As groups grow, informal arrangements become increasingly difficult
+    to manage. Membership lists, spreadsheets, social media and messaging
+    apps can help initially, but they don't provide an integrated way
+    to organise people, responsibilities, activities and feedback.
+  </p>
+
+  <p>
+    This is a database-driven system designed to bring those activities
+    together, giving your organisation the structure and tools it needs
+    to develop.
+  </p>
+
+</header>
+
+<main>
+
+  <section aria-labelledby="paths-heading">
+
+    <h2 id="paths-heading">Two Ways to Start</h2>
+
+    <div class="grid-2">
+
+      <div class="card">
+
+        <h3>1. Turn an Existing Audience into an Organisation</h3>
+
+        <p>
+          Having followers, subscribers or supporters doesn't
+          necessarily mean you have an organisation.
+        </p>
+
+        <p>
+          Bring people together around a common purpose. Recruit
+          members, allocate responsibilities, collect feedback
+          and organise activities. Turn passive support into
+          active participation.
+        </p>
+
+        <p>
+          <a href="turnAudienceToActivists.html">
+            Find out how to turn an audience into activists →
+          </a>
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>2. Create and Develop a New Organisation</h3>
+
+        <p>
+          Starting a club, association, community group or campaign?
+          Or perhaps your existing group is growing beyond what
+          spreadsheets and messaging apps can comfortably manage.
+        </p>
+
+        <p>
+          Establish membership, define responsibilities, publish
+          your aims and plans, and build an organisational structure
+          that can develop as your group grows.
+        </p>
+
+        <p>
+          <a href="createAnOrganization.html">
+            Find out how to create an organisation →
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section aria-labelledby="capabilities-heading">
+
+    <h2 id="capabilities-heading">Everything Your Organisation Needs to Function</h2>
+
+    <p>
+      The system brings together the main activities involved
+      in building and running an organisation.
+    </p>
+
+    <ul>
+
+      <li>
+        <strong>Membership:</strong>
+        Store and manage member information in a database.
+      </li>
+
+      <li>
+        <strong>Organisational structure:</strong>
+        Define relationships, teams, roles and responsibilities,
+        and display the organisation's structure.
+      </li>
+
+      <li>
+        <strong>Tasks:</strong>
+        Assign activities and responsibilities, and track progress.
+      </li>
+
+      <li>
+        <strong>Surveys and feedback:</strong>
+        Ask members for information, opinions and feedback.
+      </li>
+
+      <li>
+        <strong>Automated workflows:</strong>
+        Connect tasks, surveys and other activities into
+        organised processes.
+      </li>
+
+      <li>
+        <strong>Recruitment:</strong>
+        Create referral links and track recruitment activity.
+      </li>
+
+      <li>
+        <strong>Automated onboarding:</strong>
+        Guide new participants through appropriate
+        joining and introductory processes.
+      </li>
+
+      <li>
+        <strong>Internal messaging:</strong>
+        Communicate with other members within the system.
+      </li>
+
+      <li>
+        <strong>Aims, plans and policies:</strong>
+        Publish organisational aims, plans, decisions
+        and policies for members.
+      </li>
+
+      <li>
+        <strong>Payments:</strong>
+        Accept fees and other payments through
+        your organisation's payment arrangements.
+      </li>
+
+      <li>
+        <strong>Permissions:</strong>
+        Control access to individual activities and
+        functions according to assigned permissions.
+      </li>
+
+      <li>
+        <strong>Context-sensitive help:</strong>
+        Get help explaining the features where
+        you are using them.
+      </li>
+
+    </ul>
+
+    <p>
+      <a href="organizationOperatingSystem.html">
+        Learn more about the organisation operating system →
+      </a>
+    </p>
+
+  </section>
+
+
+  <section aria-labelledby="growth-heading">
+
+    <h2 id="growth-heading">Grow Beyond Spreadsheets and Messaging Groups</h2>
+
+    <p>
+      Informal tools are useful when a group is small.
+      But as membership grows, information becomes scattered,
+      responsibilities become unclear and it becomes harder
+      to coordinate what everyone is doing.
+    </p>
+
+    <p>
+      Rather than relying on separate tools for membership,
+      communication, recruitment, activities and feedback,
+      bring these functions together in one integrated system.
+    </p>
+
+    <p>
+      <a href="betterthanSpreadsheet.html">
+        Why an integrated organisation system is better than
+        relying on spreadsheets →
+      </a>
+    </p>
+
+  </section>
+
+
+  <section aria-labelledby="independent-heading">
+
+    <h2 id="independent-heading">Your Own Independent System</h2>
+
+    <p>
+      Each customer organisation operates through its own
+      independent website and database, running the same
+      underlying software.
+    </p>
+
+    <p>
+      Your organisation has its own identity, membership
+      information and organisational structure, separate
+      from other customer organisations and from the
+      system's marketing website.
+    </p>
+
+    <p>
+      You can develop your organisation's structure,
+      activities and working practices as it grows.
+    </p>
+
+    <p>
+      <a href="pricing.html">
+        Find out about hosting, pricing and the available options →
+      </a>
+    </p>
+
+  </section>
+
+
+  <section aria-labelledby="audience-heading">
+
+    <h2 id="audience-heading">Who Is It For?</h2>
+
+    <p>
+      The system is intended particularly for new and growing
+      organisations, including:
+    </p>
+
+    <ul>
+      <li>Clubs and associations.</li>
+      <li>Community groups and local initiatives.</li>
+      <li>Campaigns and pressure groups.</li>
+      <li>Volunteer organisations.</li>
+      <li>Emerging social and community movements.</li>
+      <li>People building organisations around an existing audience.</li>
+      <li>Small organisations outgrowing informal management methods.</li>
+    </ul>
+
+    <p>
+      <a href="whoShouldUseIt.html">
+        Find out who should use the system →
+      </a>
+    </p>
+
+  </section>
+
+
+  <section aria-labelledby="getting-started-heading">
+
+    <h2 id="getting-started-heading">How Do You Get Started?</h2>
+
+    <ol>
+      <li>Apply for your own independent system website.</li>
+      <li>Establish your initial organisational structure and permissions.</li>
+      <li>Publish your aims, plans and policies.</li>
+      <li>Set up membership, recruitment and onboarding.</li>
+      <li>Start assigning activities and collecting feedback.</li>
+      <li>Develop your organisation as it grows.</li>
+    </ol>
+
+    <p>
+      <a href="createAnOrganization.html">
+        Read about creating and setting up an organisation
