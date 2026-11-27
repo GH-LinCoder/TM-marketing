@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Build an Organisation | Turn an Audience into Action</title>
+
+  <meta name="description"
+        content="Build a club, community, campaign or movement. Turn an existing audience into an organisation, or organise a growing group with membership, tasks, surveys and automated workflows.">
+
+  <meta name="google-site-verification"
+        content="oXfy4QV-50tDT6rcGL8gqhB675VTRFwxUG2H2mS4cSA">
+
+  <link rel="canonical" href="https://gh-lincoder.github.io/TM-marketing/">
+
+  <!-- Open Graph -->
+  <meta property="og:title"
+        content="Build an Organisation | Organise">
+
+  <meta property="og:description"
+        content="Turn an audience into an organisation, or build a new club, community or movement from scratch.">
+
+  <meta property="og:image"
+        content="https://gh-lincoder.github.io/TM-marketing/myOrg-palace002.jpg">
+
+  <meta property="og:image:alt"
+        content="Build and manage an independent organisation">
+
+  <meta property="og:url"
+        content="https://gh-lincoder.github.io/TM-marketing/">
+
+  <meta property="og:type" content="website">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://gh-lincoder.github.io/TM-marketing/",
+        "url": "https://gh-lincoder.github.io/TM-marketing/",
+        "name": "Organise",
+        "description": "A platform for creating and managing independent organisations.",
+        "about": {
+          "@id": "https://gh-lincoder.github.io/TM-marketing/"
+        }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://gh-lincoder.github.io/TM-marketing/",
+        "name": "Organise",
+        "operatingSystem": "Web",
+        "applicationCategory": "OrganizationOperatingSystem",
+        "description": "A web-based system for building and managing new and growing organisations. It provides membership management, organisational structures, task assignment and tracking, surveys, recruitment, automated onboarding, internal messaging, organisational information, payment processing and activity-based permissions. It includes integrated context-sensitive help.",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "People starting or developing clubs, community groups, campaigns, movements and other small organisations, including people turning an existing audience into an organised group."
+        },
+        "featureList": [
+          "Database-based membership management",
+          "Organisational structure management",
+          "Task assignment and tracking",
+          "Surveys and member feedback",
+          "Automated workflows connecting tasks and surveys",
+          "Automated onboarding",
+          "Referral links and recruitment tracking",
+          "Publication of aims, plans, decisions and policies",
+          "Internal messaging",
+          "Payment processing",
+          "Activity-based access permissions",
+          "Integrated context-sensitive help"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --text: #202820;
+      --muted: #59645d;
+      --page: #f3f5f3;
+      --surface: #ffffff;
+      --surface-soft: #f8faf8;
+      --border: #d8e0d9;
+      --green-100: #dcfce7;
+      --green-200: #bbf7d0;
+      --green-700: #15803d;
+      --green-800: #166534;
+      --purple: #a78bfa;
+      --orange: #f59e0b;
+      --blue: #60a5fa;
+      --shadow: 0 2px 7px rgba(25, 45, 30, 0.08);
+      --shadow-hover: 0 6px 16px rgba(25, 45, 30, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--page);
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 1.25rem clamp(1rem, 3vw, 2rem) 3rem;
+    }
+
+    header {
+      background: linear-gradient(135deg, #eaf7ed 0%, #f7fbf7 72%);
+      border: 1px solid #d5e8d9;
+      border-radius: 16px;
+      padding: clamp(1.25rem, 3vw, 2.5rem);
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #cbdccc;
+    }
+
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0.48rem 0.9rem;
+      border-radius: 7px;
+      background: var(--green-100);
+      color: #245c37;
+      text-decoration: none;
+      font-size: 0.94rem;
+      font-weight: 650;
+      transition: background-color 150ms ease, box-shadow 150ms ease,
+                  transform 150ms ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      background: var(--green-200);
+      color: #174b2b;
+      box-shadow: 0 3px 8px rgba(25, 70, 40, 0.15);
+      outline: none;
+    }
+
+    h1 {
+      max-width: 850px;
+      font-size: clamp(2.15rem, 5vw, 3.35rem);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin: 0 0 1.25rem;
+      color: #183c28;
+    }
+
+    h2 {
+      font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+      line-height: 1.25;
+      margin: 0 0 1rem;
+      color: #263d2d;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin: 0 0 0.5rem;
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
+
+    header p:last-child,
+    section > p:last-child,
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul, ol {
+      margin: 0.6rem 0 1.25rem;
+      padding-left: 1.35rem;
+    }
+
+    li {
+      margin-bottom: 0.55rem;
+    }
+
+    a {
+      color: var(--green-800);
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: #14532d;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #4ade80;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .intro {
+      max-width: 900px;
+      font-size: clamp(1.08rem, 2vw, 1.22rem);
+      color: #405247;
+    }
+
+    header > p:not(.intro) {
+      max-width: 900px;
+      color: #435248;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+
+    main > section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 4px solid #93c5a0;
+      border-radius: 12px;
+      padding: clamp(1.2rem, 2.8vw, 2rem);
+      box-shadow: var(--shadow);
+    }
+
+    main > section h2 {
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid #e3e9e4;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin: 1.25rem 0 0;
+    }
+
+    .card {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-left: 4px solid #86b994;
+      border-radius: 10px;
+      padding: clamp(1.1rem, 2vw, 1.5rem);
+      box-shadow: var(--shadow);
+      transition: background-color 160ms ease, box-shadow 160ms ease,
+                  border-color 160ms ease, transform 160ms ease;
+    }
+
+    .card:hover {
+      background: var(--green-200);
+      border-color: #9bd6aa;
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .card h2 {
+      color: #245c37;
+      font-size: 1.45rem;
+      margin-bottom: 1rem;
+      border: 0;
+      padding: 0;
+    }
+
+    .card p {
+      color: #3f4d43;
+    }
+
+    .card p:last-child a,
+    main section > p a {
+      display: inline-block;
+      font-weight: 650;
+      text-decoration: none;
+      padding: 0.48rem 0.75rem;
+      border-radius: 6px;
+      background: var(--green-100);
+      transition: background-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    .card p:last-child a:hover,
+    main section > p a:hover {
+      background: var(--green-200);
+      box-shadow: 0 2px 6px rgba(25, 70, 40, 0.12);
+      text-decoration: underline;
+    }
+
+    section[aria-labelledby="capabilities-heading"] > ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.25rem 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    section[aria-labelledby="capabilities-heading"] > ul > li {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-left: 4px solid #a7cdb0;
+      border-radius: 9px;
+      padding: 1rem 1.1rem;
+      margin: 0;
+      transition: background-color 150ms ease, box-shadow 150ms ease,
+                  transform 150ms ease;
+    }
+
+    section[aria-labelledby="capabilities-heading"] > ul > li:hover {
+      background: var(--green-200);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-1px);
+    }
+
+    section[aria-labelledby="capabilities-heading"] > ul > li strong {
+      display: block;
+      color: #245c37;
+      font-size: 1.04rem;
+      margin-bottom: 0.3rem;
+    }
+
+    section[aria-labelledby="audience-heading"] > ul {
+      columns: 2;
+      column-gap: 2.5rem;
+      padding-left: 1.4rem;
+    }
+
+    section[aria-labelledby="audience-heading"] > ul li {
+      break-inside: avoid;
+      padding-left: 0.15rem;
+    }
+
+    section[aria-labelledby="getting-started-heading"] ol {
+      list-style: none;
+      counter-reset: steps;
+      padding: 0;
+      margin: 1.25rem 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    section[aria-labelledby="getting-started-heading"] ol li {
+      counter-increment: steps;
+      position: relative;
+      min-height: 100px;
+      margin: 0;
+      padding: 1rem 1rem 1rem 3.1rem;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+    }
+
+    section[aria-labelledby="getting-started-heading"] ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0.85rem;
+      top: 0.9rem;
+      display: grid;
+      place-items: center;
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      background: var(--green-100);
+      color: var(--green-800);
+      font-weight: 750;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    footer {
+      border-top: 1px solid #cbd5cc;
+      margin-top: 1.75rem;
+      padding: 1.5rem 0.5rem 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    footer p {
+      max-width: 850px;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 0.75rem 0.75rem 2rem;
+      }
+
+      header {
+        border-radius: 11px;
+      }
+
+      .grid-2,
+      section[aria-labelledby="capabilities-heading"] > ul {
+        grid-template-columns: 1fr;
+      }
+
+      section[aria-labelledby="getting-started-heading"] ol {
+        grid-template-columns: 1fr;
+      }
+
+      section[aria-labelledby="audience-heading"] > ul {
+        columns: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <nav aria-label="Primary Navigation">
+    <a href="index.html">Home</a>
+    <a href="createAnOrganization.html">Create</a>
+    <a href="buildAnOrganization.html">Build</a>
+    <a href="runAnOrganization.html">Run</a>
+    <a href="turnAudienceToActivists.html">Recruit</a>
+    <a href="whoShouldUseIt.html">Who It's For</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <h1>Create your organization</h1>
+
+  <p class="intro">
+    If you have an audience or a following, now you can convert them into an action group or a fan club.
+  </p>
+  <p>
+    If you and some friends want to create an organization now you can do it with powerful tools usually only available at a high price.
+  </p>
+  <p>
+    If you already have a small group you may be feeling the pressure and headaches from using inadequate disconnected services.
+  </p>
+
+  <p>
+    Whether you already have a following that you want to organise,
+    or you are starting a new club, community or movement, or you have an existing organization with growing pains, this system
+    provides the tools to create, build and manage your new organisation.
+    What we don't advise is swapping if you are already very large and committed to an existing provider.
+  </p>
+
+</header>
+
+<main>
+
+  <section aria-labelledby="paths-heading">
+
+    <h2 class="sr-only" id="paths-heading">Ways to start an organisation</h2>
+
+    <div class="grid-2">
+
+      <div class="card">
+
+        <h2>Large Audience</h2>
+
+        <p> If you are motivated by wanting to change the world,
+          you can become more powerful by converting some of your followers, subscribers or supporters into a self-managing organization to support your aims.
+        </p>
+
+        <p>
+          Bring people together around a common purpose. Recruit
+          members, allocate responsibilities, collect feedback
+          and organise activities. Turn passive support into
+          active participation.
+        </p>
+
+        <p>
+          Or invite your audience into your fan club. If you are an author now you can have your very own book club. If you are a singer or actor now you can have your own fan club.
+        </p>
+        <p>
+          Or use your new organization to sell training courses.
+          You can use the create task function to produce multi-step training courses with text and embedded video. These can be linked to a payment system, and to surveys edited as tests.
+        </p>
+
+        <p>
+          Or use the survey tools to collect feedback. This gives the opportunity to do research on your followers, or to check what they would like you to produce next.
+        </p>
+
+        <p>
+          You have the option of using the organization to sell such services or memberships.
+        </p>
+
+        <p>
+          <a href="turnAudienceToActivists.html">
+            Find out how to turn an audience into activists →
+          </a>
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h2>Small group</h2>
+
+        <p>
+          Very small groups can manage with social media and a spreadsheet, but now you can do so much better right from the start.
+          And as groups grow, you need proper member records, and a system where all the data and permissions are in one place.
+          Keeping a list of members on a spreadsheets, while having an unconnected social media and messaging
+          apps eventually cause headaches that can be avoided by using a system designed to organise people, responsibilities, activities and feedback.
+        </p>
+
+        <p>
+          Starting a club, association, community group or campaign?
+          Or perhaps your existing group is growing beyond what
+          spreadsheets and messaging apps can comfortably manage.
+        </p>
+
+        <p>
+          Establish membership, publish your aims and plans, build organisational structure
+          that can develop as your group grows. You will automate the onboarding of new recruits. You can produce surveys and assign tasks.
+          These tools give you powers that a spreadsheet and a chat group cannot supply.
+        </p>
+
+        <p>
+          Perhaps you already have a large membership in an existing web system. We don't want you to swap. What we can offer, however, is
+          if you want to create an activist cadre. Let the existing system cater to the large numbers of passive members.
+          You can invite the core activists into a new organization.
+        </p>
+
+        <p>
+          <a href="createAnOrganization.html">
+            Find out how to create your organisation →
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section aria-labelledby="capabilities-heading">
+
+    <h2 id="capabilities-heading">What Your Organisation Needs</h2>
+
+    <p>
+      Every organization is different, but every organization shares foundational needs.
+      The system aims to provide the foundational needs of all organizations.
+    </p>
+
+    <ul>
+
+      <li>
+        <strong>Aims, plans and policies:</strong>
+        The first steps in creating your new organization are to publish your organisational aims, plans,
+        and policies. Everyone has direct access to these when using the system. It is a way to keep the members informed and on track.
+      </li>
+
+      <li>
+        <strong>Membership:</strong>
+        Store and manage member information in a database.
+      </li>
+
+      <li>
+        <strong>Automated onboarding:</strong>
+        The new person sees a 'welcome' task that explains what they are expected to do and how to use the system.
+        Then there is an initial survey where the new person answers questions and the system adjusts to those choices. How it adjusts is determined by you.
+      </li>
+
+      <li>
+        <strong>Surveys and feedback:</strong>
+        The first survey, which you edited to suit your organization, is just one of many that you can produce.
+        In this way you can ask members for information, but also let them choose what they want to do.
+        Every answer clicked can set off a number of reactions without needing your attention.
+        Many routine clerical actions can be automated.
+      </li>
+
+      <li>
+        <strong>Tasks:</strong>
+        You can create any number of tasks and assign them to various persons.
+        A task can be a training course.
+        Every task can have many steps.
+        A task can be a to-do list or just a way to track how far a process has advanced.
+        A task can even become a soft production line.
+        Any step on a task can cause automated processes to run. What runs is under your control.
+      </li>
+
+      <li>
+        <strong>Automated workflows:</strong>
+        The ability to have automated reactions to survey answers or to task step means that it is possible to create automated workflows.
+        This connects tasks, surveys and other actions into organised processes.
+      </li>
+
+      <li>
+        <strong>Organisational structure:</strong>
+        One of the other kinds of action that can be automated is the construction or dismantling of structures within your organization.
+        Almost everything inside and outside the organization can be represented by a kind of name-tag (called an 'appro') inside the system.
+        These appros can then be related to represent the structure of the organization.
+        This means you can define relationships, teams, roles and permissions,
+        and display the organisation's structure.
+      </li>
+
+      <li>
+        <strong>Recruitment:</strong>
+        Every person in the system is represented by an appro. You can create referral links by attaching the appro and this means you can track recruitment and know who has recruited whom.
+        As everything is an appro in the system you can also generate arbitrary referral links to represent anything. This makes simple A/B testing possible without extra software. It also makes it possible to track which social media produced a new recruit.
+      </li>
+
+      <li>
+        <strong>Internal messaging:</strong>
+        Communicate with other members within the system. The internal messaging is also a place to keep notes as reminders to yourself.
+        In addition it is possible to send messages to groups or even to a task or survey. Anything that is represented by an appro (which is virtually everything) can be sent a message.
+        This creates emergent potential.
+      </li>
+
+      <li>
+        <strong>Payments:</strong>
+        Accept fees and other payments through one of the integrated payment processors.
+        Your organisation would have its own account with the payment processor. This means that payments from your members go to the payment processor and then into your bank.
+      </li>
+
+      <li>
+        <strong>Permissions:</strong>
+        The system has 2 very strict permission systems to protect private data and to prevent unauthorised access to the database.
+      </li>
+
+      <li>
+        <strong>Context-aware help:</strong>
+        The system has a single 'How?' button which opens a window with an explanation of whatever module you have open. Change the module and the information updates to the new module.
+      </li>
+
+    </ul>
+
+    <p>
+      <a href="organizationOperatingSystem.html">
+        The system is categorized as an organisation operating system.</a>
+        This is a new category of software.
+        It provides the foundational needs of almost every kind of organization.
+        What it leaves the existing software companies to is adding apps to handle the differences of organizations.
+        The concept is that every organization would have an organization operating system and on top of that would add apps for their specific needs such as an app to handle sports or an app for first-aid groups.
+    </p>
+
+  </section>
+
+
+  <!-- section aria-labelledby="growth-heading">
+
+    <h2 id="growth-heading">Grow Beyond Spreadsheets and Messaging Groups</h2>
+
+    <p>
+      Informal tools are useful when a group is small.
+      But as membership grows, information becomes scattered,
+      responsibilities become unclear and it becomes harder
+      to coordinate what everyone is doing.
+    </p>
+
+    <p>
+      Rather than relying on separate tools for membership,
+      communication, recruitment, activities and feedback,
+      bring these functions together in one integrated system.
+    </p>
+
+    <p>
+      <a href="betterthanSpreadsheet.html">
+        Why an integrated organisation system is better than
+        relying on spreadsheets →
+      </a>
+    </p>
+
+</section -->
+
+
+  <section aria-labelledby="independent-heading">
+
+    <h2 id="independent-heading">Your Own Independent System</h2>
+
+    <p>
+      Each customer organisation operates through its own
+      independent website and database, running the same
+      underlying software.
+    </p>
+
+    <p>
+      Your organisation has its own identity, membership
+      information and organisational structure, separate
+      from other customer organisations and from the
+      system's marketing website.
+    </p>
+
+    <p>
+      You can develop your organisation's structure,
+      activities and working practices as it grows.
+    </p>
+
+    <p>
+      <a href="pricing.html">
+        Find out about hosting, pricing and the available options →
+      </a>
+    </p>
+
+  </section>
+
+
+  <section aria-labelledby="audience-heading">
+
+    <h2 id="audience-heading">Who Is It For?</h2>
+
+    <p>
+      The system is intended particularly for new
+      organisations, or ones still using crude systems that are causing headache.
+      It isn't limited to existing software categories and so it is equally useful for:
+    </p>
+
+    <ul>
+      <li>Clubs and associations.</li>
+      <li>Community groups and local initiatives.</li>
+      <li>Campaigns and pressure groups.</li>
+      <li>Volunteer organisations.</li>
+      <li>Emerging social and community movements.</li>
+      <li>People building organisations around an existing audience.</li>
+      <li>Small organisations outgrowing informal management methods.</li>
+      <li>Political activists.</li>
+      <li>Public health advocates.</li>
+      <li>Residents associations.</li>
+    </ul>
+
+    <p>
+      <a href="whoShouldUseIt.html">
+        Find out more about who should use the system →
+      </a>
+    </p>
+
+  </section>
+
+
+  <section aria-labelledby="getting-started-heading">
+
+    <h2 id="getting-started-heading">How Do You Get Started?</h2>
+    <p>
+      Whether you are starting with an idea, bringing people
+      together around a common cause, or turning an existing
+      audience into an active organisation, you can apply
+      for your own independent system.
+    </p>
+
+    <ol>
+      <li>Apply for your own independent system website. This is done on the HQ website.</li>
+      <li>Establish your initial organisational structure and permissions.</li>
+      <li>Publish your aims, plans and policies.</li>
+      <li>Set up membership, recruitment and onboarding.</li>
+      <li>Start assigning activities and collecting feedback.</li>
+      <li>Develop your organisation as it grows.</li>
+    </ol>
+
+    <p>
+      <a href="createAnOrganization.html">
+        Read about creating and setting up an organisation →
+      </a>
+    </p>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <p>
+    This system is designed to help people create, build and
+    manage new and growing organisations.
+  </p>
+
+  <p>
+    <small>The system is currently under test.</small>
+  </p>
+
+  <p>
+    Customer organisations operate on independent instances
+    of the same software, with their own websites and databases.
+  </p>
+
+  <p>
+    <a href="betterthanSpreadsheet.html">
+      Why an integrated organisation system is better than
+      relying on spreadsheets →
+    </a>
+  </p>
+
+  <p>
+    <a href="llms.txt">Machine-readable site information</a>
+  </p>
+
+</footer>
+
+</body>
+</html>
