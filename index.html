@@ -202,6 +202,21 @@
       text-underline-offset: 3px;
     }
 
+        /* Remove underline and green color from links that wrap cards */
+    ul > a, 
+    a.card, 
+    a .card {
+      text-decoration: none !important;
+      color: inherit !important;
+      display: block;
+    }
+
+    /* Ensure text inside the clickable card stays the correct dark color */
+    ul > a .card strong, 
+    ul > a .card p {
+      color: var(--text);
+    }
+    
 .card.clickable:hover {
     background: var(--green-100);
     border-color: var(--green-700);
@@ -252,20 +267,22 @@
       margin: 1.25rem 0 0;
     }
 
+     /* Base Card Styling (Matches Dashboard) */
     .card {
-      background: var(--surface-soft);
+      background: var(--surface); /* Clean white background */
       border: 1px solid var(--border);
-      border-left: 4px solid #86b994;
-      border-radius: 10px;
+      border-top: 4px solid var(--blue); /* Matches dashboard task card accent */
+      border-radius: 12px; /* Matches dashboard rounded-lg */
       padding: clamp(1.1rem, 2vw, 1.5rem);
       box-shadow: var(--shadow);
-      transition: background-color 160ms ease, box-shadow 160ms ease,
-                  border-color 160ms ease, transform 160ms ease;
+      transition: box-shadow 160ms ease, transform 160ms ease, background-color 160ms ease;
     }
 
-    .card:hover {
-      background: var(--green-200);
-      border-color: #9bd6aa;
+    /* Subtle, Professional Hover Effect (No bright green wash) */
+    .card:hover,
+    .card.clickable:hover {
+      background: var(--surface-soft); /* Very subtle light gray shift */
+      border-top-color: var(--green-700); /* Optional: subtle green accent on hover only */
       box-shadow: var(--shadow-hover);
       transform: translateY(-2px);
     }
@@ -572,102 +589,80 @@
       The system aims to provide the foundational needs of all organizations.
     </p>
 
-    <ul>
-<a href="constitution.html">
-      <li class="card clickable">
-        <strong>Aims, plans and policies:</strong>
-        The first steps in creating your new organization are to publish your organisational aims, plans,
-        and policies. Everyone has direct access to these when using the system. It is a way to keep the members informed and on track.
+       <ul style="list-style: none; padding: 0; margin: 1.25rem 0 1.5rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem;">
+      <li>
+        <a href="constitution.html" class="card clickable" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <strong>Aims, plans and policies:</strong>
+          <p>The first steps in creating your new organization are to publish your organisational aims, plans, and policies. Everyone has direct access to these when using the system.</p>
+        </a>
       </li>
-</a>
-<a href="membership.html">
-      <li class="card clickable">
-        <strong>Membership:</strong>
-        Store and manage member information in a database.
+      <li>
+        <a href="membership.html" class="card clickable" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <strong>Membership:</strong>
+          <p>Store and manage member information securely in a dedicated database.</p>
+        </a>
       </li>
-</a>
-      <a href="onboard.html">
-      <li class="card clickable">
-        <strong>Automated onboarding:</strong>
-        The new person sees a 'welcome' task that explains what they are expected to do and how to use the system.
-        Then there is an initial survey where the new person answers questions and the system adjusts to those choices. How it adjusts is determined by you.
+      <li>
+        <a href="onboard.html" class="card clickable" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <strong>Automated onboarding:</strong>
+          <p>New recruits see a 'welcome' task explaining the system, followed by an initial survey that automatically adjusts their experience based on their choices.</p>
+        </a>
       </li>
-      </a>
-      <a href="surveys.html">
-      <li class="card clickable">
-        <strong>Surveys and feedback:</strong>
-        The first survey, which you edited to suit your organization, is just one of many that you can produce.
-        In this way you can ask members for information, but also let them choose what they want to do.
-        Every answer clicked can set off a number of reactions without needing your attention.
-        Many routine clerical actions can be automated.
+      <li>
+        <a href="surveys.html" class="card clickable" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <strong>Surveys and feedback:</strong>
+          <p>Produce custom surveys to gather member input. Every answer can trigger automated reactions, handling routine clerical actions without your attention.</p>
+        </a>
       </li>
-</a>
-     <a href="tasks.html"> 
-      <li class="card clickable">
-        <strong>Tasks:</strong>
-        You can create any number of tasks and assign them to various persons.
-        A task can be a training course.
-        Every task can have many steps.
-        A task can be a to-do list or just a way to track how far a process has advanced.
-        A task can even become a soft production line.
-        Any step on a task can cause automated processes to run. What runs is under your control.
+      <li>
+        <a href="tasks.html" class="card clickable" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <strong>Tasks:</strong>
+          <p>Create and assign multi-step tasks. Use them as to-do lists, training courses with embedded video, or soft production lines with automated step triggers.</p>
+        </a>
       </li>
-     </a>
-<a href="automations.html">
-      <li class="card clickable">
-        <strong>Automated workflows:</strong>
-        The ability to have automated reactions to survey answers or to task step means that it is possible to create automated workflows.
-        This connects tasks, surveys and other actions into organised processes.
+      <li>
+        <a href="automations.html" class="card clickable" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <strong>Automated workflows:</strong>
+          <p>Connect tasks, surveys, and structural changes into organized, automated processes that run in the background.</p>
+        </a>
       </li>
-</a>
-    <a href="structure.html">
-      <li class="card clickable">
-        <strong>Organisational structure:</strong>
-        One of the other kinds of action that can be automated is the construction or dismantling of structures within your organization.
-        Almost everything inside and outside the organization can be represented by a kind of name-tag (called an 'appro') inside the system.
-        These appros can then be related to represent the structure of the organization.
-        This means you can define relationships, teams, roles and permissions,
-        and display the organisation's structure.
+      <li>
+        <a href="structure.html" class="card clickable" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <strong>Organisational structure:</strong>
+          <p>Define relationships, teams, roles, and permissions using 'appro' name-tags, and visually display your organization's structure as it grows.</p>
+        </a>
       </li>
-    </a>
-<a href="recruitment.html">
-      <li class="card clickable">
-        <strong>Recruitment:</strong>
-        Every person in the system is represented by an appro. You can create referral links by attaching the appro and this means you can track recruitment and know who has recruited whom.
-        As everything is an appro in the system you can also generate arbitrary referral links to represent anything. This makes simple A/B testing possible without extra software. It also makes it possible to track which social media produced a new recruit.
+      <li>
+        <a href="recruitment.html" class="card clickable" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <strong>Recruitment tracking:</strong>
+          <p>Generate referral links attached to specific 'appro' tags to track exactly who recruited whom, or which social media channel drove a new member.</p>
+        </a>
       </li>
-</a>
-<a href="notes.html">
-      <li class="card clickable">
-        <strong>Internal messaging:</strong>
-        Communicate with other members within the system. The internal messaging is also a place to keep notes as reminders to yourself.
-        In addition it is possible to send messages to groups or even to a task or survey. Anything that is represented by an appro (which is virtually everything) can be sent a message.
-        This creates emergent potential.
+      <li>
+        <a href="notes.html" class="card clickable" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <strong>Internal messaging:</strong>
+          <p>Communicate within the system, keep personal notes, or send messages directly to a specific task, survey, or group.</p>
+        </a>
       </li>
-</a>
-
-      <a href="payments.html">
-      <li class="card clickable">
-        <strong>Payments:</strong>
-        Accept fees and other payments through one of the integrated payment processors.
-        Your organisation would have its own account with the payment processor. This means that payments from your members go to the payment processor and then into your bank.
+      <li>
+        <a href="payments.html" class="card clickable" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <strong>Payments:</strong>
+          <p>Accept fees and memberships through integrated payment processors, with funds routing directly to your organization's bank account.</p>
+        </a>
       </li>
-      </a>
-
-      <a href="permissions.html">
-      <li class="card clickable">
-        <strong>Permissions:</strong>
-        The system has 2 very strict permission systems to protect private data and to prevent unauthorised access to the database.
+      <li>
+        <a href="permissions.html" class="card clickable" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <strong>Strict Permissions:</strong>
+          <p>Dual-layer permission systems protect private data and prevent unauthorized access to the database, designed specifically for volunteer administrators.</p>
+        </a>
       </li>
-      </a>
-<a href="how.html">
-      <li class="card clickable">
-        <strong>Context-aware help:</strong>
-        The system has a single 'How?' button which opens a window with an explanation of whatever module you have open. Change the module and the information updates to the new module.
-      </li>
-</a>
+      <li>
+        <a href="how.html" class="card clickable" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <strong>Context-aware help:</strong>
+          <p>A single 'How?' button opens an explanation of whatever module you currently have open, updating dynamically as you navigate.</p>
+        </a>
+      </li9>
     </ul>
-
 
   </section>
 
