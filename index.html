@@ -116,14 +116,27 @@
     }
 
     header {
-      background: linear-gradient(135deg, #eaf7ed 0%, #f7fbf7 72%);
-      border: 1px solid #d5e8d9;
+       background: linear-gradient(135deg, #f0f4f8 0%, #f8fafc 100%); 
+      border: 1px solid #d1d9e0;
       border-radius: 16px;
       padding: clamp(1.25rem, 3vw, 2.5rem);
       margin-bottom: 1.5rem;
       box-shadow: var(--shadow);
     }
 
+  /* Force header text to be strictly neutral, removing any green tint */
+    header h1 {
+      color: #111827; /* Strict dark gray/black (Tailwind gray-900) */
+    }
+    
+    header p {
+      color: #374151; /* Neutral gray (Tailwind gray-700) */
+    }
+
+    header p.intro {
+      color: #4b5563; /* Slightly lighter neutral gray for the intro */
+    }
+    
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -267,26 +280,28 @@
       margin: 1.25rem 0 0;
     }
 
-     /* Base Card Styling (Matches Dashboard) */
+      /* Base Card: NO hover reaction. It just sits there professionally. */
     .card {
-      background: var(--surface); /* Clean white background */
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-top: 4px solid var(--blue); /* Matches dashboard task card accent */
-      border-radius: 12px; /* Matches dashboard rounded-lg */
+      border-top: 4px solid var(--blue); /* Blue accent, matching dashboard task cards */
+      border-radius: 12px;
       padding: clamp(1.1rem, 2vw, 1.5rem);
       box-shadow: var(--shadow);
-      transition: box-shadow 160ms ease, transform 160ms ease, background-color 160ms ease;
+      /* Notice: NO transition property here, so it won't animate */
     }
 
-    /* Subtle, Professional Hover Effect (No bright green wash) */
-    .card:hover,
-    .card.clickable:hover {
-      background: var(--surface-soft); /* Very subtle light gray shift */
-      border-top-color: var(--green-700); /* Optional: subtle green accent on hover only */
+    /* HOVER REACTION: ONLY for cards that are actually clickable links */
+    .card.clickable:hover,
+    a.card:hover {
+      background: var(--surface-soft);
+      border-top-color: var(--green-700); /* Subtle green hint ONLY on actual clickables */
       box-shadow: var(--shadow-hover);
       transform: translateY(-2px);
+      cursor: pointer; /* Explicitly shows the hand cursor */
+      transition: background-color 160ms ease, box-shadow 160ms ease,
+                  border-color 160ms ease, transform 160ms ease;
     }
-
     .card h2 {
       color: black;
       font-size: 1.45rem;
