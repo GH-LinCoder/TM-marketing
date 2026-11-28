@@ -383,21 +383,21 @@
 
 <main>
 
-  <!-- OPTIONAL VIDEO SECTION: Delete this entire <section> if the page has no YouTube video -->
-  <section aria-labelledby="video-heading">
-    <h2 id="video-heading">[VIDEO_SECTION_HEADING_E_G_OVERVIEW_VIDEO]</h2>
-    <p>[SHORT_CAPTION_INTRODUCING_WHAT_THE_VIDEO_SHOWS]</p>
+ <!-- OPTIONAL GRAPHIC SECTION: Delete this entire <section> if the page has no diagram/image -->
+  <section aria-labelledby="graphic-heading">
+    <h2 id="graphic-heading">[GRAPHIC_SECTION_HEADING]</h2>
+    <p>[BRIEF_CONTEXT_FOR_THE_GRAPHIC]</p>
 
-    <!-- Paste ANY standard YouTube link into data-youtube-url (watch?v=, youtu.be/, or /shorts/) -->
-    <div class="video-embed"
-         data-youtube-url="https://www.youtube.com/watch?v=[VIDEO_ID]"
-         data-video-title="[DESCRIPTIVE_VIDEO_TITLE_FOR_ACCESSIBILITY]">
-      <p class="video-fallback">
-        Watch the video on YouTube:
-        <a href="https://www.youtube.com/watch?v=[VIDEO_ID]">[DESCRIPTIVE_VIDEO_TITLE_FOR_ACCESSIBILITY]</a>
-      </p>
-    </div>
+    <figure class="page-graphic">
+      <img src="[IMAGE_FILENAME.jpg]"
+           alt="[CLEAR_DESCRIPTIVE_ALT_TEXT_FOR_SEO_AND_SCREEN_READERS]"
+           loading="lazy">
+      <figcaption>[CAPTION_EXPLAINING_THE_DIAGRAM_OR_SCREENSHOT]</figcaption>
+    </figure>
   </section>
+
+
+
 
   <!-- MAIN EXPLANATION SECTION -->
   <section aria-labelledby="main-topic-heading">
@@ -414,19 +414,22 @@
     </ul>
   </section>
 
-  <!-- OPTIONAL GRAPHIC SECTION: Delete this entire <section> if the page has no diagram/image -->
-  <section aria-labelledby="graphic-heading">
-    <h2 id="graphic-heading">[GRAPHIC_SECTION_HEADING]</h2>
-    <p>[BRIEF_CONTEXT_FOR_THE_GRAPHIC]</p>
+   <!-- OPTIONAL VIDEO SECTION: Delete this entire <section> if the page has no YouTube video -->
+  <section aria-labelledby="video-heading">
+    <h2 id="video-heading">[VIDEO_SECTION_HEADING_E_G_OVERVIEW_VIDEO]</h2>
+    <p>[SHORT_CAPTION_INTRODUCING_WHAT_THE_VIDEO_SHOWS]</p>
 
-    <figure class="page-graphic">
-      <img src="[IMAGE_FILENAME.jpg]"
-           alt="[CLEAR_DESCRIPTIVE_ALT_TEXT_FOR_SEO_AND_SCREEN_READERS]"
-           loading="lazy">
-      <figcaption>[CAPTION_EXPLAINING_THE_DIAGRAM_OR_SCREENSHOT]</figcaption>
-    </figure>
+    <!-- Paste ANY standard YouTube link into data-youtube-url (watch?v=, youtu.be/, or /shorts/) -->
+    <div class="video-embed"
+         data-youtube-url="https://www.youtube.com/watch?v=[VIDEO_ID]"
+         data-video-title="[DESCRIPTIVE_VIDEO_TITLE_FOR_ACCESSIBILITY]">
+      <p class="video-fallback">
+        Watch the video on YouTube:
+        <a href="https://www.youtube.com/watch?v=[VIDEO_ID]">[DESCRIPTIVE_VIDEO_TITLE_FOR_ACCESSIBILITY]</a>
+      </p>
+    </div>
   </section>
-
+ 
   <!-- HOW IT WORKS / NEXT STEPS CTA SECTION -->
   <section aria-labelledby="next-steps-heading">
     <h2 id="next-steps-heading">Put It Into Practice</h2>
