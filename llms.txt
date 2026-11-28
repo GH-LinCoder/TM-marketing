@@ -1,1 +1,49 @@
-A version of the website without html
+# Organise
+
+> Turn an existing audience into an organisation, or build a new club, community, campaign or movement with membership, tasks, surveys, workflows and sovereign organisation instances.
+
+The system is categorised as an organisation operating system: a web-based system providing foundational organisational tools for new and growing groups, while each customer organisation runs on its own independent website and database. The system is currently under test, and applications for an independent system website are made via https://myorg.netlify.app.
+
+## Who It Is For
+- Creators, authors, singers, actors, commentators and others turning an audience or following into an action group, fan club, book club or course/membership hub
+- Friends starting a new club, association, community group, local initiative, campaign, pressure group, volunteer organisation or movement
+- Small organisations outgrowing spreadsheets, social media and disconnected messaging apps
+- Larger organisations keeping existing systems for passive members while forming a specialised activist cadre or skunk works unit
+
+## Core Capabilities
+- Aims, plans and policies: Publish organisational aims, plans and policies for direct access
+- Membership: Store and manage member information in a dedicated database
+- Automated onboarding: Welcome task followed by an initial survey that adjusts the member's experience
+- Surveys and feedback: Custom surveys with answers that can trigger automated reactions
+- Tasks: Multi-step tasks for to-do lists, training courses with text and embedded video, or automated step workflows
+- Automated workflows: Connect tasks, surveys and structural changes in background processes
+- Organisational structure: Define relationships, teams, roles and permissions using 'appro' name-tags and visual structure views
+- Recruitment tracking: Referral links tied to 'appro' tags to track recruitment sources and channels
+- Internal messaging: In-system messaging, personal notes, and messages tied to tasks, surveys or groups
+- Payments: Accept fees and memberships via integrated payment processors routed to the organisation's bank account
+- Strict permissions: Dual-layer permission systems designed for volunteer administrators to protect private data and database access
+- Context-aware help: A dynamic 'How?' button explaining the currently open module
+
+## Site Pages
+- [Home](https://gh-lincoder.github.io/TM-marketing/): Overview of turning audiences into organisations, starting small groups, core capabilities, independent systems, target audiences and getting started steps
+- [Organisation Operating System](https://gh-lincoder.github.io/TM-marketing/OOS.html): Explanation of the organisation operating system category and domain-specific apps
+- [Who Is It For?](https://gh-lincoder.github.io/TM-marketing/whosItFor.html): Detailed look at organisations and groups suited to the system
+- [Create an Organisation](https://gh-lincoder.github.io/TM-marketing/create.html): Starting and setting up a new organisation
+- [Sovereign System](https://gh-lincoder.github.io/TM-marketing/sovereign.html): Running an independent website and database separate from other organisations and the marketing site
+- [Better Than a Spreadsheet](https://gh-lincoder.github.io/TM-marketing/betterThanSpreadsheet.html): Moving past spreadsheets and disconnected messaging tools
+- [Turn Audience to Activists](https://gh-lincoder.github.io/TM-marketing/turnAudienceToActivists.html): Converting followers or supporters into an active group, fan club or paid offering
+- [Activist Cadre & Skunk Works](https://gh-lincoder.github.io/TM-marketing/cadre.html): Forming a focused activist unit or skunk works alongside an existing system
+- [Pricing](https://gh-lincoder.github.io/TM-marketing/pricing.html): Pricing information for the system
+- [About](https://gh-lincoder.github.io/TM-marketing/about.html): Background information on the system
+- [Aims, Plans and Policies](https://gh-lincoder.github.io/TM-marketing/constitution.html): Publishing aims, plans and policies
+- [Membership](https://gh-lincoder.github.io/TM-marketing/membership.html): Dedicated member database management
+- [Automated Onboarding](https://gh-lincoder.github.io/TM-marketing/onboard.html): Welcome tasks and adaptive initial surveys
+- [Surveys and Feedback](https://gh-lincoder.github.io/TM-marketing/surveys.html): Surveys and automated response triggers
+- [Tasks](https://gh-lincoder.github.io/TM-marketing/tasks.html): Multi-step tasks, courses and workflows
+- [Automated Workflows](https://gh-lincoder.github.io/TM-marketing/automations.html): Background automation across tasks, surveys and structure
+- [Organisational Structure](https://gh-lincoder.github.io/TM-marketing/structure.html): Teams, roles, permissions and 'appro' name-tags
+- [Recruitment Tracking](https://gh-lincoder.github.io/TM-marketing/recruitment.html): Referral links and recruitment attribution
+- [Internal Messaging](https://gh-lincoder.github.io/TM-marketing/notes.html): Messaging, notes and targeted group/task/survey communication
+- [Payments](https://gh-lincoder.github.io/TM-marketing/payments.html): Membership and fee collection
+- [Strict Permissions](https://gh-lincoder.github.io/TM-marketing/permissions.html): Dual-layer data and database permissions
+- [Context-Aware Help](https://gh-lincoder.github.io/TM-marketing/how.html): Dynamic 'How?' help across modules
