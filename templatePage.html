@@ -195,8 +195,11 @@
 </footer>
 
 <script>
-  // Converts any simple YouTube URL in [data-youtube-url] into a responsive, privacy-enhanced iframe
   (function () {
+    // Set your generic overview video once here:
+    var DEFAULT_VIDEO_URL = 'https://youtu.be/YOUR_DEFAULT_VIDEO_ID';
+    var DEFAULT_VIDEO_TITLE = 'Overview of Organise — Organisation Operating System';
+
     function extractYouTubeId(url) {
       if (!url) return null;
       var match = url.match(
@@ -205,12 +208,21 @@
       return match ? match[1] : null;
     }
 
-    document.querySelectorAll('.video-embed[data-youtube-url]').forEach(function (box) {
-      var rawUrl = box.getAttribute('data-youtube-url');
-      var videoId = extractYouTubeId(rawUrl);
+    document.querySelectorAll('.video-embed').forEach(function (box) {
+      var rawUrl = (box.getAttribute('data-youtube-url') || '').trim();
+
+      // Option 3: Hide the entire section if explicitly set to "none"
+      if (rawUrl.toLowerCase() === 'none') {
+        var parentSection = box.closest('section');
+        if (parentSection) parentSection.remove();
+        return;
+      }
+
+      // Option 1 & 2: Use page-specific URL if valid, otherwise fall back to default
+      var videoId = extractYouTubeId(rawUrl) || extractYouTubeId(https://youtube.com/shorts/OOtlD2oo8Ws);
       if (!videoId) return;
 
-      var title = box.getAttribute('data-video-title') || 'YouTube video player';
+      var title = (box.getAttribute('data-video-title') || '').trim() || Early Adopters;
       var iframe = document.createElement('iframe');
       iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?rel=0';
       iframe.title = title;
@@ -224,6 +236,5 @@
     });
   })();
 </script>
-
 </body>
 </html>
