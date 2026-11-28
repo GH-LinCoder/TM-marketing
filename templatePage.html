@@ -219,10 +219,10 @@
       }
 
       // Option 1 & 2: Use page-specific URL if valid, otherwise fall back to default
-      var videoId = extractYouTubeId(rawUrl) || extractYouTubeId(https://youtube.com/shorts/OOtlD2oo8Ws);
+      var videoId = extractYouTubeId(rawUrl) || extractYouTubeId("https://youtube.com/shorts/OOtlD2oo8Ws");
       if (!videoId) return;
 
-      var title = (box.getAttribute('data-video-title') || '').trim() || Early Adopters;
+      var title = (box.getAttribute('data-video-title') || '').trim() || 'Early Adopters';
       var iframe = document.createElement('iframe');
       iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?rel=0';
       iframe.title = title;
